@@ -1,0 +1,13 @@
+C:\Users\vinny\OneDrive\Área de Trabalho\SENAI\BACK-END\POO27-DATABASE\bin\Debug\netcoreapp3.1\POO27-DATABASE.exe
+C:\Users\vinny\OneDrive\Área de Trabalho\SENAI\BACK-END\POO27-DATABASE\bin\Debug\netcoreapp3.1\POO27-DATABASE.deps.json
+C:\Users\vinny\OneDrive\Área de Trabalho\SENAI\BACK-END\POO27-DATABASE\bin\Debug\netcoreapp3.1\POO27-DATABASE.runtimeconfig.json
+C:\Users\vinny\OneDrive\Área de Trabalho\SENAI\BACK-END\POO27-DATABASE\bin\Debug\netcoreapp3.1\POO27-DATABASE.runtimeconfig.dev.json
+C:\Users\vinny\OneDrive\Área de Trabalho\SENAI\BACK-END\POO27-DATABASE\bin\Debug\netcoreapp3.1\POO27-DATABASE.dll
+C:\Users\vinny\OneDrive\Área de Trabalho\SENAI\BACK-END\POO27-DATABASE\bin\Debug\netcoreapp3.1\POO27-DATABASE.pdb
+C:\Users\vinny\OneDrive\Área de Trabalho\SENAI\BACK-END\POO27-DATABASE\obj\Debug\netcoreapp3.1\POO27-DATABASE.csprojAssemblyReference.cache
+C:\Users\vinny\OneDrive\Área de Trabalho\SENAI\BACK-END\POO27-DATABASE\obj\Debug\netcoreapp3.1\POO27-DATABASE.AssemblyInfoInputs.cache
+C:\Users\vinny\OneDrive\Área de Trabalho\SENAI\BACK-END\POO27-DATABASE\obj\Debug\netcoreapp3.1\POO27-DATABASE.AssemblyInfo.cs
+C:\Users\vinny\OneDrive\Área de Trabalho\SENAI\BACK-END\POO27-DATABASE\obj\Debug\netcoreapp3.1\POO27-DATABASE.csproj.CoreCompileInputs.cache
+C:\Users\vinny\OneDrive\Área de Trabalho\SENAI\BACK-END\POO27-DATABASE\obj\Debug\netcoreapp3.1\POO27-DATABASE.dll
+C:\Users\vinny\OneDrive\Área de Trabalho\SENAI\BACK-END\POO27-DATABASE\obj\Debug\netcoreapp3.1\POO27-DATABASE.pdb
+C:\Users\vinny\OneDrive\Área de Trabalho\SENAI\BACK-END\POO27-DATABASE\obj\Debug\netcoreapp3.1\POO27-DATABASE.genruntimeconfig.cache
