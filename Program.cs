@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace POO27_DATABASE
 {
@@ -9,11 +10,19 @@ namespace POO27_DATABASE
         {
         Produto p1 = new Produto();
         p1.Codigo = 1;
-        p1.Nome = "Tagima";
+        p1.Nome = "Gianini5";
         p1.Preco = 7500f;
 
         p1.Cadastrar(p1);
-        p1.Remover("Tagima");
+        
+        Produto alterado = new Produto();
+        alterado.Codigo = 3;
+        alterado.Nome = "Ibanez";
+        alterado.Preco = 6800f;
+
+        p1.Alterar(alterado);
+
+        p1.Remover("Gianini5");
 
         List<Produto> lista = p1.Ler();
 
