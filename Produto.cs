@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace POO27_DATABASE
 {
@@ -67,7 +68,43 @@ namespace POO27_DATABASE
             produtos.Add(p);
             }
 
+            produtos = produtos.OrderBy(y => y.Nome).ToList();
+
             return produtos;
+        }
+        /// <summary>
+        /// remove uma ou mais linhas que contenham o termo
+        /// </summary>
+        /// <param name="_termo">termo para ser buscado</param>
+        public void Remover(string _termo){
+
+            // Foi feita uma lista que servirá como uma espécie de backup para as linhas do csv
+            List<string> linhas = new List<string>();
+
+
+            //Essa parte é usada para ler as linhas que sejam diferente de null, se for vai ser add uma nova linha
+            using(StreamReader arquivo = new StreamReader(PATH)){
+                string linha;
+                while((linha = arquivo.ReadLine()) != null){
+                    linhas.Add(linha);
+                }
+            }
+
+            // Foi removido as linhas que tiverem o termo passado como argumento
+            // codigo=1;nome=Tagima;preco=7500
+            // Tagima
+            linhas.RemoveAll(linhas=> linhas.Contains(_termo));
+
+            //Reescrevemos o csv do zero
+            using(StreamWriter output = new StreamWriter(PATH)){
+                foreach(string ln in linhas){
+                    output.Write(linhas + "\n");
+                }
+            }
+        }
+
+        public List<Produto> Filtrar(string _nome){
+            return Ler().FindAll(x => x.Nome == _nome);
         }
         private string Separar (string _coluna)
         {

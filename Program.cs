@@ -13,6 +13,7 @@ namespace POO27_DATABASE
         p1.Preco = 7500f;
 
         p1.Cadastrar(p1);
+        p1.Remover("Tagima");
 
         List<Produto> lista = p1.Ler();
 
