@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace POO27_DATABASE
 {
- public class Produto
+ public class Produto : IProduto
     {
         public int Codigo { get; set; }
         public string Nome { get; set; }
@@ -74,6 +74,7 @@ namespace POO27_DATABASE
             produtos = produtos.OrderBy(y => y.Nome).ToList();
             return produtos; 
         }
+        //ate aq ^ 
 
         /// <summary>
         /// Remove uma ou mais linhas que contenham o termo
