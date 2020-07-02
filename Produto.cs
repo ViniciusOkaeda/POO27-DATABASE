@@ -34,7 +34,7 @@ namespace POO27_DATABASE
         /// Cadastra um produto
         /// </summary>
         /// <param name="prod">Objeto Produto</param>
-        public void Cadastrar(Produto prod)
+        void IProduto.Cadastrar(Produto prod)
         {
             var linha = new string[] { PrepararLinha(prod) };
             File.AppendAllLines(PATH, linha);
@@ -44,7 +44,7 @@ namespace POO27_DATABASE
         /// Lê o csv 
         /// </summary>
         /// <returns>Lista de produtos</returns>
-        public List<Produto> Ler()
+        List<Produto> IProduto.Ler()
         {
             // Criamos uma lista que servirá como nosso retorno
             List<Produto> produtos = new List<Produto>();
@@ -80,20 +80,12 @@ namespace POO27_DATABASE
         /// Remove uma ou mais linhas que contenham o termo
         /// </summary>
         /// <param name="_termo">termo para ser buscado</param>
-        public void Remover(string _termo){
+        void IProduto.Remover(string _termo){
 
             // Criamos uma lista que servirá como uma espécie de backup para as linhas do csv
             List<string> linhas = new List<string>();
 
-            // Utilizamos a bliblioteca StreamReader para ler nosso .csv
-            using(StreamReader arquivo = new StreamReader(PATH))
-            {
-                string linha;
-                while((linha = arquivo.ReadLine()) != null)
-                {
-                    linhas.Add(linha);
-                }
-            }
+            LerCSV(linhas);
 
             // Removemos as linhas que tiverem o termo passado como argumento
             // codigo=1;nome=Tagima;preco=7500
@@ -108,20 +100,12 @@ namespace POO27_DATABASE
         /// Altera um produto
         /// </summary>
         /// <param name="_produtoAlterado">Objeto de Produto</param>
-        public void Alterar(Produto _produtoAlterado){
+        void IProduto.Alterar(Produto _produtoAlterado){
 
             // Criamos uma lista que servirá como uma espécie de backup para as linhas do csv
             List<string> linhas = new List<string>();
 
-            // Utilizamos a bliblioteca StreamReader para ler nosso .csv
-            using(StreamReader arquivo = new StreamReader(PATH))
-            {
-                string linha;
-                while((linha = arquivo.ReadLine()) != null)
-                {
-                    linhas.Add(linha);
-                }
-            }
+            LerCSV(linhas);
             // codigo=2;nome=Ibanez;preco=7500
             // linhas.RemoveAll(z => z.Split(";")[0].Contains(_produtoAlterado.Codigo.ToString()));
             
@@ -134,8 +118,22 @@ namespace POO27_DATABASE
             // Reescrevemos nosso csv do zero
             ReescreverCSV(linhas);         
         }
-
-
+        /// <summary>
+        /// Refatoração para ler o csv.
+        /// </summary>
+        /// <param name="linhas">le o csv</param>
+        private void LerCSV(List<string> linhas){
+            // Utilizamos a bliblioteca StreamReader para ler nosso .csv
+            using(StreamReader arquivo = new StreamReader(PATH))
+            {
+                string linha;
+                while((linha = arquivo.ReadLine()) != null)
+                {
+                    linhas.Add(linha);
+                }
+            }
+        }
+        
         private void ReescreverCSV(List<string> lines){
             // Reescrevemos nosso csv do zero
             using(StreamWriter output = new StreamWriter(PATH))
@@ -149,7 +147,7 @@ namespace POO27_DATABASE
 
         public List<Produto> Filtrar(string _nome)
         {
-            return Ler().FindAll(x => x.Nome == _nome);
+            return ((IProduto)this).Ler().FindAll(x => x.Nome == _nome);
         }
 
         private string Separar(string _coluna)
